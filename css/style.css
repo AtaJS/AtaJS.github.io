@@ -14,7 +14,7 @@
   --text: #e4e4f0;
   --text-muted: #7a7a9a;
   --text-dim: #4a4a6a;
-  --nav-height: 64px;
+  --nav-height: 110px;
   --radius: 12px;
   --transition: 0.25s ease;
 }
@@ -42,46 +42,60 @@ nav {
   position: fixed;
   top: 0; left: 0; right: 0;
   height: var(--nav-height);
-  background: rgba(10, 10, 18, 0.92);
-  backdrop-filter: blur(12px);
+  background: url('../assets/upper_bar.jpg') center/cover no-repeat;
   border-bottom: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2rem;
+  padding: 0 2.5rem;
   z-index: 1000;
 }
 
+nav::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 18, 0.72);
+  backdrop-filter: blur(6px);
+  z-index: 0;
+}
+
+nav > * {
+  position: relative;
+  z-index: 1;
+}
+
 .nav-logo {
-  font-size: 1.1rem;
-  font-weight: 700;
+  font-size: 1.4rem;
+  font-weight: 800;
   background: linear-gradient(90deg, var(--accent-blue), var(--accent-purple));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   text-decoration: none;
+  letter-spacing: 0.02em;
 }
 
 .nav-links {
   display: flex;
-  gap: 0.25rem;
+  gap: 0.5rem;
   list-style: none;
 }
 
 .nav-links a {
-  color: var(--text-muted);
+  color: var(--text);
   text-decoration: none;
-  font-size: 0.875rem;
-  padding: 0.4rem 0.85rem;
-  border-radius: 6px;
+  font-size: 1rem;
+  padding: 0.55rem 1.1rem;
+  border-radius: 8px;
   transition: var(--transition);
   font-weight: 500;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  color: var(--text);
-  background: var(--border);
+  color: var(--accent-blue);
+  background: rgba(255,255,255,0.08);
 }
 
 .nav-links a.active {
