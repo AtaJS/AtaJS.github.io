@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Emotion Classification — Ata Jodeiri Seyedian</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    .project-detail { padding: 4rem 0; }
+    .breadcrumb { font-size:0.8rem; color:var(--text-dim); margin-bottom:2rem; }
+    .breadcrumb a { color:var(--accent-blue); text-decoration:none; }
+    .breadcrumb a:hover { text-decoration:underline; }
+    .project-header { margin-bottom: 3rem; }
+    .project-header h1 { font-size:2.4rem; font-weight:900; line-height:1.2; margin-bottom:1rem; }
+    .project-meta { display:flex; gap:1.5rem; flex-wrap:wrap; color:var(--text-dim); font-size:0.85rem; margin-bottom:2rem; }
+    .project-meta span { color:var(--accent-blue); font-weight:600; }
+    .project-body { max-width:780px; }
+    .project-body p { color:var(--text-muted); font-size:1rem; line-height:1.9; margin-bottom:1.5rem; }
+    .project-body h2 { font-size:1.3rem; font-weight:700; margin:2rem 0 0.75rem; }
+    .tech-stack { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem 1.5rem; margin:2rem 0; font-size:0.9rem; color:var(--text-muted); }
+    .tech-stack strong { color:var(--accent-purple); }
+    .tags { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.5rem; }
+    .project-links { display:flex; gap:1rem; flex-wrap:wrap; margin-top:2.5rem; }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <nav>
+    <a href="../index.html" class="nav-logo">Ata JS</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../research.html">Research</a></li>
+      <li><a href="../projects.html" class="active">Projects</a></li>
+      <li><a href="../experience.html">Experience</a></li>
+      <li><a href="../publications.html">Publications</a></li>
+      <li><a href="../gallery.html">Gallery</a></li>
+    </ul>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="page">
+    <div class="container">
+      <div class="project-detail">
+        <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../projects.html">Projects</a> / Emotion Classification</div>
+
+        <div class="project-header">
+          <h1>Explainable Emotion Classification Using Large Language Models</h1>
+          <div class="project-meta">
+            <div>Context: <span>Affective Computing · NLP · University of Oulu, 2025</span></div>
+          </div>
+          <div class="tags">
+            <span class="tag tag-purple">Few-Shot</span>
+            <span class="tag tag-blue">CoT Prompting</span>
+            <span class="tag tag-green">LLM Eval</span>
+          </div>
+        </div>
+
+        <div class="project-body">
+          <p>
+            A comparative evaluation of large language models for emotion classification from text, focusing on both accuracy and interpretability. The study assessed multiple LLM architectures under different few-shot learning configurations to understand how model scale and prompt design affect affective computing tasks.
+          </p>
+
+          <h2>Models Evaluated</h2>
+          <p>
+            Three model families were evaluated: Mistral 7B, Qwen2.5 7B, and FLAN-T5 (Base, 250M parameters). Models were run locally via Ollama for the 7B models and via HuggingFace for FLAN-T5. The surprising key finding was that FLAN-T5 Base (250M parameters) consistently outperformed both 7B models on the emotion classification benchmark.
+          </p>
+
+          <h2>Few-Shot Configurations</h2>
+          <p>
+            Each model was evaluated under three prompting regimes: zero-shot (no examples), 3-shot (three labeled examples in context), and 5-shot (five examples). Performance was measured across all six basic emotion categories. The study showed that smaller, instruction-tuned models can outperform larger general-purpose models on narrow classification tasks.
+          </p>
+
+          <h2>Chain-of-Thought Prompting</h2>
+          <p>
+            Chain-of-Thought (CoT) prompting was applied to elicit step-by-step reasoning from the models before producing a final emotion label. This improved both accuracy and interpretability, with the model's reasoning chain providing a human-readable explanation for each prediction.
+          </p>
+
+          <div class="tech-stack">
+            <strong>Stack:</strong> Python · HuggingFace Transformers · Ollama · Prompt Engineering · FLAN-T5 · Mistral · Qwen2.5
+          </div>
+
+          <div class="project-links">
+            <a href="https://github.com/AtaJS/explainable-emotion-classification-and-analysis-using-llms" target="_blank" class="btn btn-primary">GitHub →</a>
+            <a href="../projects.html" class="btn btn-outline">← Back to Projects</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>Built by Ata Jodeiri Seyedian · Oulu, Finland · <a href="mailto:Ata.Seyedian@oulu.fi">Ata.Seyedian@oulu.fi</a></p>
+      </div>
+    </footer>
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+</html>

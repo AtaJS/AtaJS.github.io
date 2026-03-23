@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diabetic Retinopathy Detection — Ata Jodeiri Seyedian</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    .project-detail { padding: 4rem 0; }
+    .breadcrumb { font-size:0.8rem; color:var(--text-dim); margin-bottom:2rem; }
+    .breadcrumb a { color:var(--accent-blue); text-decoration:none; }
+    .breadcrumb a:hover { text-decoration:underline; }
+    .project-header { margin-bottom: 3rem; }
+    .project-header h1 { font-size:2.4rem; font-weight:900; line-height:1.2; margin-bottom:1rem; }
+    .project-meta { display:flex; gap:1.5rem; flex-wrap:wrap; color:var(--text-dim); font-size:0.85rem; margin-bottom:2rem; }
+    .project-meta span { color:var(--accent-blue); font-weight:600; }
+    .project-body { max-width:780px; }
+    .project-body p { color:var(--text-muted); font-size:1rem; line-height:1.9; margin-bottom:1.5rem; }
+    .project-body h2 { font-size:1.3rem; font-weight:700; margin:2rem 0 0.75rem; }
+    .tech-stack { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem 1.5rem; margin:2rem 0; font-size:0.9rem; color:var(--text-muted); }
+    .tech-stack strong { color:var(--accent-purple); }
+    .tags { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.5rem; }
+    .project-links { display:flex; gap:1rem; flex-wrap:wrap; margin-top:2.5rem; }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <nav>
+    <a href="../index.html" class="nav-logo">Ata JS</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../research.html">Research</a></li>
+      <li><a href="../projects.html" class="active">Projects</a></li>
+      <li><a href="../experience.html">Experience</a></li>
+      <li><a href="../publications.html">Publications</a></li>
+      <li><a href="../gallery.html">Gallery</a></li>
+    </ul>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="page">
+    <div class="container">
+      <div class="project-detail">
+        <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../projects.html">Projects</a> / Diabetic Retinopathy Detection</div>
+
+        <div class="project-header">
+          <h1>Diabetic Retinopathy Detection via Transfer Learning & Explainable AI</h1>
+          <div class="project-meta">
+            <div>Context: <span>Deep Learning · Medical AI · University of Oulu, 2024</span></div>
+          </div>
+          <div class="tags">
+            <span class="tag tag-purple">PyTorch</span>
+            <span class="tag tag-blue">GradCAM</span>
+            <span class="tag tag-green">Medical AI</span>
+          </div>
+        </div>
+
+        <div class="project-body">
+          <p>
+            A deep learning pipeline for automated grading of diabetic retinopathy severity from retinal fundus images. The system was trained on the DeepDRiD dataset containing 2,000 retinal images across five severity levels, with additional pre-training on the Kaggle DR dataset for improved generalization.
+          </p>
+
+          <h2>Model Architecture</h2>
+          <p>
+            ResNet18 was selected as the backbone for transfer learning, with the final classification head replaced for five-class grading. Attention mechanisms were integrated at multiple levels — Channel Attention (SE blocks), Spatial Attention, and Self-Attention — to guide the model toward clinically relevant retinal regions such as microaneurysms, exudates, and haemorrhages.
+          </p>
+
+          <h2>Explainability</h2>
+          <p>
+            GradCAM (Gradient-weighted Class Activation Mapping) was applied to generate visual heatmaps highlighting the regions of the retina that most influenced each prediction. This transparency is critical in a clinical setting where clinicians need to validate and trust model decisions.
+          </p>
+
+          <h2>Ensemble Methods</h2>
+          <p>
+            Three ensemble strategies were evaluated: Stacking (meta-learner on top of base models), Gradient Boosting, and Weighted Average. The two-stage training approach — first on Kaggle DR, then fine-tuned on DeepDRiD — improved performance on the smaller target dataset significantly.
+          </p>
+
+          <div class="tech-stack">
+            <strong>Stack:</strong> Python · PyTorch · Transfer Learning · GradCAM · Ensemble Methods · NumPy · Matplotlib
+          </div>
+
+          <div class="project-links">
+            <a href="https://github.com/AtaJS/enhancing-diabetic-retinopathy-detection-with-transfer-learning-and-explainable-ai" target="_blank" class="btn btn-primary">GitHub →</a>
+            <a href="../projects.html" class="btn btn-outline">← Back to Projects</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>Built by Ata Jodeiri Seyedian · Oulu, Finland · <a href="mailto:Ata.Seyedian@oulu.fi">Ata.Seyedian@oulu.fi</a></p>
+      </div>
+    </footer>
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+</html>

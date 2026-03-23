@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gesture Recognition System — Ata Jodeiri Seyedian</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    .project-detail { padding: 4rem 0; }
+    .breadcrumb { font-size:0.8rem; color:var(--text-dim); margin-bottom:2rem; }
+    .breadcrumb a { color:var(--accent-blue); text-decoration:none; }
+    .breadcrumb a:hover { text-decoration:underline; }
+    .project-header { margin-bottom: 3rem; }
+    .project-header h1 { font-size:2.4rem; font-weight:900; line-height:1.2; margin-bottom:1rem; }
+    .project-meta { display:flex; gap:1.5rem; flex-wrap:wrap; color:var(--text-dim); font-size:0.85rem; margin-bottom:2rem; }
+    .project-meta span { color:var(--accent-blue); font-weight:600; }
+    .project-body { max-width:780px; }
+    .project-body p { color:var(--text-muted); font-size:1rem; line-height:1.9; margin-bottom:1.5rem; }
+    .project-body h2 { font-size:1.3rem; font-weight:700; margin:2rem 0 0.75rem; }
+    .tech-stack { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem 1.5rem; margin:2rem 0; font-size:0.9rem; color:var(--text-muted); }
+    .tech-stack strong { color:var(--accent-purple); }
+    .tags { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.5rem; }
+    .project-links { display:flex; gap:1rem; flex-wrap:wrap; margin-top:2.5rem; }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <nav>
+    <a href="../index.html" class="nav-logo">Ata JS</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../research.html">Research</a></li>
+      <li><a href="../projects.html" class="active">Projects</a></li>
+      <li><a href="../experience.html">Experience</a></li>
+      <li><a href="../publications.html">Publications</a></li>
+      <li><a href="../gallery.html">Gallery</a></li>
+    </ul>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="page">
+    <div class="container">
+      <div class="project-detail">
+        <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../projects.html">Projects</a> / Gesture Recognition</div>
+
+        <div class="project-header">
+          <h1>Face & Hand Gesture Recognition System (ESP8266 + Raspberry Pi)</h1>
+          <div class="project-meta">
+            <div>Context: <span>Embedded Systems · Bachelor's Project · University of Tabriz</span></div>
+          </div>
+          <div class="tags">
+            <span class="tag tag-green">Embedded</span>
+            <span class="tag tag-blue">OpenCV</span>
+            <span class="tag tag-purple">TensorFlow</span>
+          </div>
+        </div>
+
+        <div class="project-body">
+          <p>
+            A real-time embedded system combining face recognition and hand gesture detection to issue hardware commands over a local network. The system bridges computer vision on a Raspberry Pi with IoT actuation via an ESP8266 microcontroller.
+          </p>
+
+          <h2>System Design</h2>
+          <p>
+            The Raspberry Pi 400 captures video from a USB camera and runs the vision pipeline. Recognized faces trigger authentication events, while hand gestures are mapped to commands (e.g., open hand → LED on, closed fist → LED off). Commands are sent to the ESP8266 over HTTP, which drives the GPIO outputs accordingly.
+          </p>
+
+          <h2>Firmware & Multi-threading</h2>
+          <p>
+            The ESP8266 firmware was written entirely in C++ using the Arduino framework, implementing a lightweight HTTP server to receive and execute commands. On the host side, a multi-threaded Python application separates face recognition, gesture detection, and network communication into concurrent threads to maintain real-time performance.
+          </p>
+
+          <h2>Gesture Classification</h2>
+          <p>
+            MediaPipe Hands was used for hand landmark detection, feeding 21 keypoint coordinates into a TensorFlow classifier trained on custom gesture data. The classifier distinguishes between several gesture classes with low latency, suitable for real-time embedded deployment.
+          </p>
+
+          <div class="tech-stack">
+            <strong>Stack:</strong> C++ (ESP8266 / Arduino) · Python · OpenCV · MediaPipe · TensorFlow · Multi-threading · HTTP
+          </div>
+
+          <div class="project-links">
+            <a href="../projects.html" class="btn btn-outline">← Back to Projects</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>Built by Ata Jodeiri Seyedian · Oulu, Finland · <a href="mailto:Ata.Seyedian@oulu.fi">Ata.Seyedian@oulu.fi</a></p>
+      </div>
+    </footer>
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+</html>
