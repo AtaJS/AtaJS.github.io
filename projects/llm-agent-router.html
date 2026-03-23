@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LLM Agent Router — Ata Jodeiri Seyedian</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    .project-detail { padding: 4rem 0; }
+    .breadcrumb { font-size:0.8rem; color:var(--text-dim); margin-bottom:2rem; }
+    .breadcrumb a { color:var(--accent-blue); text-decoration:none; }
+    .breadcrumb a:hover { text-decoration:underline; }
+    .project-header { margin-bottom: 3rem; }
+    .project-header h1 { font-size:2.4rem; font-weight:900; line-height:1.2; margin-bottom:1rem; }
+    .project-meta { display:flex; gap:1.5rem; flex-wrap:wrap; color:var(--text-dim); font-size:0.85rem; margin-bottom:2rem; }
+    .project-meta span { color:var(--accent-blue); font-weight:600; }
+    .project-body { max-width:780px; }
+    .project-body p { color:var(--text-muted); font-size:1rem; line-height:1.9; margin-bottom:1.5rem; }
+    .project-body h2 { font-size:1.3rem; font-weight:700; margin:2rem 0 0.75rem; }
+    .tech-stack { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem 1.5rem; margin:2rem 0; font-size:0.9rem; color:var(--text-muted); }
+    .tech-stack strong { color:var(--accent-purple); }
+    .tags { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.5rem; }
+    .project-links { display:flex; gap:1rem; flex-wrap:wrap; margin-top:2.5rem; }
+    .results-table { width:100%; border-collapse:collapse; margin:1.5rem 0; font-size:0.9rem; }
+    .results-table th { text-align:left; padding:0.6rem 1rem; background:var(--bg-card); color:var(--accent-purple); font-weight:700; border-bottom:1px solid var(--border); }
+    .results-table td { padding:0.6rem 1rem; color:var(--text-muted); border-bottom:1px solid var(--border); }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <nav>
+    <a href="../index.html" class="nav-logo">Ata JS</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../research.html">Research</a></li>
+      <li><a href="../projects.html" class="active">Projects</a></li>
+      <li><a href="../experience.html">Experience</a></li>
+      <li><a href="../publications.html">Publications</a></li>
+      <li><a href="../gallery.html">Gallery</a></li>
+    </ul>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="page">
+    <div class="container">
+      <div class="project-detail">
+        <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../projects.html">Projects</a> / LLM Agent Router</div>
+
+        <div class="project-header">
+          <h1>Intelligent Healthcare Query Routing with LLM Agents</h1>
+          <div class="project-meta">
+            <div>Context: <span>LLM · Healthcare · Routing Systems</span></div>
+          </div>
+          <div class="tags">
+            <span class="tag tag-blue">LLM</span>
+            <span class="tag tag-purple">Healthcare</span>
+            <span class="tag tag-green">GPT-4o</span>
+          </div>
+        </div>
+
+        <div class="project-body">
+          <p>
+            An intelligent routing system that directs patient healthcare queries to the appropriate service using three different approaches — from rule-based keyword matching to LLM-powered intent understanding. The system was benchmarked on 45 real healthcare queries across five service categories.
+          </p>
+
+          <h2>Three Routing Approaches</h2>
+          <p>
+            The project compares a rule-based method against two LLM-based approaches. Rule-based routing uses keyword matching and achieves 95.6% accuracy with instant response times, making it a strong baseline. Google Gemini 2.5 Flash pushes accuracy to 97.8% at ~0.877s latency. Azure OpenAI GPT-4o reaches 100% accuracy at 0.466s — faster and more accurate than Gemini, though at a higher cost.
+          </p>
+
+          <table class="results-table">
+            <thead>
+              <tr><th>Method</th><th>Accuracy</th><th>Latency</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Rule-based (keyword)</td><td>95.6%</td><td>Instant</td></tr>
+              <tr><td>Gemini 2.5 Flash</td><td>97.8%</td><td>~0.877s</td></tr>
+              <tr><td>GPT-4o (Azure)</td><td>100%</td><td>0.466s</td></tr>
+            </tbody>
+          </table>
+
+          <h2>Why LLMs Win on Ambiguous Queries</h2>
+          <p>
+            The key advantage of LLM routing is context understanding. A rule-based system struggles to distinguish between "schedule an appointment" and "cancel an appointment" if the keyword "appointment" triggers the same category. LLMs correctly resolve intent even in ambiguous or multi-part queries, which is critical in a healthcare setting where misrouting can cause real harm.
+          </p>
+
+          <h2>Resilience & Cost</h2>
+          <p>
+            The system includes graceful fallback to rule-based routing during API outages, ensuring 100% uptime. A cost-benefit analysis showed GPT-4o costs approximately $0.50 per 1,000 queries — justified for high-stakes clinical routing where accuracy matters most.
+          </p>
+
+          <div class="tech-stack">
+            <strong>Stack:</strong> Python · Azure OpenAI GPT-4o · Google Gemini 2.5 Flash · Rule-based NLP · Evaluation Framework
+          </div>
+
+          <div class="project-links">
+            <a href="https://github.com/AtaJS/llm-agent-router" target="_blank" class="btn btn-primary">GitHub →</a>
+            <a href="../projects.html" class="btn btn-outline">← Back to Projects</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>Built by Ata Jodeiri Seyedian · Oulu, Finland · <a href="mailto:Ata.Seyedian@oulu.fi">Ata.Seyedian@oulu.fi</a></p>
+      </div>
+    </footer>
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+</html>
