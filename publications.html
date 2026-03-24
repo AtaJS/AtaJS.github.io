@@ -186,21 +186,16 @@
         <p>Research output including papers in preparation, seminar presentations, and course lectures.</p>
       </div>
 
-      <div class="status-banner">
-        <div class="status-dot"></div>
-        <div>First-author paper currently in preparation — based on Master's thesis research on rPPG methods at CMVS, University of Oulu, under Prof. Guoying Zhao.</div>
-      </div>
-
       <!-- PAPERS -->
       <div class="section-label" style="margin-bottom:1.5rem;">Papers</div>
 
       <div class="paper-card">
         <div class="paper-status status-in-prep">In Preparation</div>
-        <div class="paper-title">Remote Photoplethysmography Under Real-World Conditions: A Comparative Study of Deep Learning and Handcrafted Methods</div>
-        <div class="paper-authors"><strong>Ata Jodeiri Seyedian</strong>, Guoying Zhao</div>
-        <div class="paper-venue">Targeting IEEE / CVPR / MICCAI — Expected 2026</div>
+        <div class="paper-title">Geometry-Aware Attention for Remote Photoplethysmography Under Head Rotation</div>
+        <div class="paper-authors">Hui Wei, <strong>Ata Jodeiri Seyedian</strong>, Guoying Zhao</div>
+        <div class="paper-venue">28th ACM International Conference on Multimodal Interaction (ICMI 2026) — Expected October 2026</div>
         <div class="paper-abstract">
-          This work presents a systematic comparative evaluation of both deep learning-based (PhysNet, PhysFormer) and handcrafted signal processing-based (CHROM, POS, GREEN) rPPG methods for contactless heart rate estimation from facial video. We evaluate across diverse real-world conditions including varying lighting, head motion, skin tones, and recording scenarios using the OBF dataset (200 videos, 100 subjects). We further propose a signal quality assessment voting ensemble (SQA_VOTE) that achieves competitive accuracy with reduced variance across conditions.
+          Remote photoplethysmography (rPPG) methods using deep learning have achieved strong performance under controlled conditions, but accuracy degrades significantly when subjects rotate their heads, as facial surface orientation toward the camera changes. This work proposes a geometry-aware attention mechanism that integrates 3D facial surface orientation derived from MediaPipe landmarks into the FactorizePhys attention module. By modulating spatial attention weights based on surface geometry, the method improves heart rate estimation robustness under head rotation while maintaining computational efficiency. Experiments on MMPD, VIPL-HR, PURE, and UBFC-rPPG datasets demonstrate improved performance under rotation conditions compared to geometry-blind baselines.
         </div>
         <div class="tags">
           <span class="tag tag-blue">rPPG</span>
