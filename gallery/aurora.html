@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AURO.RA Accelerathon — Gallery</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    .post-hero { padding:4rem 0 2rem; border-bottom:1px solid var(--border); margin-bottom:3rem; }
+    .breadcrumb { font-size:0.8rem; color:var(--text-dim); margin-bottom:1rem; }
+    .breadcrumb a { color:var(--accent-blue); text-decoration:none; }
+    .breadcrumb a:hover { text-decoration:underline; }
+    .post-tag { font-size:0.75rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent-blue); margin-bottom:0.75rem; }
+    .post-hero h1 { font-size:2.4rem; font-weight:900; line-height:1.2; margin-bottom:0.75rem; }
+    .post-hero p { color:var(--text-muted); font-size:1rem; max-width:700px; line-height:1.8; }
+    .media-section { margin-bottom:3.5rem; }
+    .media-section-title { font-size:0.85rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent-purple); margin-bottom:1.25rem; display:flex; align-items:center; gap:0.75rem; }
+    .media-section-title::after { content:''; flex:1; height:1px; background:var(--border); }
+    .photo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+    .photo-item { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; transition:var(--transition); }
+    .photo-item:hover { border-color:var(--accent-purple); transform:translateY(-2px); }
+    .photo-item img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; }
+    .photo-placeholder { width:100%; aspect-ratio:4/3; display:flex; flex-direction:column; align-items:center; justify-content:center; background:linear-gradient(135deg,rgba(124,111,255,0.08),rgba(0,200,255,0.05)); color:var(--text-dim); font-size:0.8rem; gap:0.5rem; }
+    .photo-placeholder span { font-size:1.8rem; }
+    .photo-caption { padding:0.75rem 1rem; font-size:0.8rem; color:var(--text-muted); }
+    .video-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; }
+    .video-card { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; transition:var(--transition); }
+    .video-card:hover { border-color:var(--accent-blue); transform:translateY(-2px); }
+    .video-card iframe { width:100%; aspect-ratio:16/9; display:block; border:none; }
+    .video-placeholder { width:100%; aspect-ratio:16/9; display:flex; flex-direction:column; align-items:center; justify-content:center; background:linear-gradient(135deg,rgba(124,111,255,0.08),rgba(0,200,255,0.05)); color:var(--text-dim); font-size:0.85rem; gap:0.5rem; }
+    .video-placeholder span { font-size:2rem; }
+    .video-caption { padding:1rem 1.25rem; font-size:0.85rem; font-weight:600; color:var(--text); border-top:1px solid var(--border); }
+    .video-caption small { display:block; font-weight:400; color:var(--text-muted); margin-top:0.2rem; }
+    @media(max-width:768px) { .photo-grid{grid-template-columns:repeat(2,1fr);} .video-grid{grid-template-columns:1fr;} }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <nav>
+    <a href="../index.html" class="nav-logo">Ata JS</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../research.html">Research</a></li>
+      <li><a href="../projects.html">Projects</a></li>
+      <li><a href="../experience.html">Experience</a></li>
+      <li><a href="../publications.html">Publications</a></li>
+      <li><a href="../gallery.html" class="active">Gallery</a></li>
+    </ul>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="page">
+    <div class="container">
+
+      <div class="post-hero">
+        <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../gallery.html">Gallery</a> / AURO.RA Accelerathon</div>
+        <div class="post-tag">Competition · March 2026</div>
+        <h1>🥇 AURO.RA Accelerathon — 1st Place</h1>
+        <p>A 6-day accelerator and hackathon organized by the Oulu Entrepreneurship Society (OuluES). Competed against teams from across Oulu, working through ideation, prototyping, and a final pitch — finishing in 1st place.</p>
+      </div>
+
+      <!-- VIDEOS -->
+      <div class="media-section">
+        <div class="media-section-title">Videos</div>
+        <div class="video-grid">
+          <div class="video-card">
+            <div class="video-placeholder"><span>🎬</span>Add event/pitch video</div>
+            <div class="video-caption">Event Highlights<small>AURO.RA Accelerathon · OuluES · 2026</small></div>
+          </div>
+          <div class="video-card">
+            <div class="video-placeholder"><span>🎬</span>Add demo video</div>
+            <div class="video-caption">Final Pitch / Demo<small>AURO.RA · 2026</small></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PHOTOS -->
+      <div class="media-section">
+        <div class="media-section-title">Photos</div>
+        <div class="photo-grid">
+          <div class="photo-item">
+            <div class="photo-placeholder"><span>📸</span>Add photo</div>
+            <div class="photo-caption">Award Ceremony</div>
+          </div>
+          <div class="photo-item">
+            <div class="photo-placeholder"><span>📸</span>Add photo</div>
+            <div class="photo-caption">Team Photo</div>
+          </div>
+          <div class="photo-item">
+            <div class="photo-placeholder"><span>📸</span>Add photo</div>
+            <div class="photo-caption">Hackathon Day</div>
+          </div>
+          <div class="photo-item">
+            <div class="photo-placeholder"><span>📸</span>Add photo</div>
+            <div class="photo-caption">Pitching Session</div>
+          </div>
+          <div class="photo-item">
+            <div class="photo-placeholder"><span>📸</span>Add photo</div>
+            <div class="photo-caption">Workshop</div>
+          </div>
+          <div class="photo-item">
+            <div class="photo-placeholder"><span>📸</span>Add photo</div>
+            <div class="photo-caption">Event Venue</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="../gallery.html" class="btn btn-outline" style="margin-bottom:3rem;display:inline-block;">← Back to Gallery</a>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>Built by Ata Jodeiri Seyedian · Oulu, Finland · <a href="mailto:Ata.Seyedian@oulu.fi">Ata.Seyedian@oulu.fi</a></p>
+      </div>
+    </footer>
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+</html>

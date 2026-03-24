@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>UBICOMP VR Experiments — Gallery</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    .post-hero { padding:4rem 0 2rem; border-bottom:1px solid var(--border); margin-bottom:3rem; }
+    .breadcrumb { font-size:0.8rem; color:var(--text-dim); margin-bottom:1rem; }
+    .breadcrumb a { color:var(--accent-blue); text-decoration:none; }
+    .breadcrumb a:hover { text-decoration:underline; }
+    .post-tag { font-size:0.75rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent-blue); margin-bottom:0.75rem; }
+    .post-hero h1 { font-size:2.4rem; font-weight:900; line-height:1.2; margin-bottom:0.75rem; }
+    .post-hero p { color:var(--text-muted); font-size:1rem; max-width:700px; line-height:1.8; }
+    .media-section { margin-bottom:3.5rem; }
+    .media-section-title { font-size:0.85rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--accent-purple); margin-bottom:1.25rem; display:flex; align-items:center; gap:0.75rem; }
+    .media-section-title::after { content:''; flex:1; height:1px; background:var(--border); }
+    .photo-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; }
+    .photo-item { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; transition:var(--transition); }
+    .photo-item:hover { border-color:var(--accent-purple); transform:translateY(-2px); }
+    .photo-item img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; }
+    .photo-placeholder { width:100%; aspect-ratio:4/3; display:flex; flex-direction:column; align-items:center; justify-content:center; background:linear-gradient(135deg,rgba(124,111,255,0.08),rgba(0,200,255,0.05)); color:var(--text-dim); font-size:0.8rem; gap:0.5rem; }
+    .photo-placeholder span { font-size:1.8rem; }
+    .photo-caption { padding:0.75rem 1rem; font-size:0.8rem; color:var(--text-muted); }
+    @media(max-width:768px) { .photo-grid{grid-template-columns:repeat(2,1fr);} }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <nav>
+    <a href="../index.html" class="nav-logo">Ata JS</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../research.html">Research</a></li>
+      <li><a href="../projects.html">Projects</a></li>
+      <li><a href="../experience.html">Experience</a></li>
+      <li><a href="../publications.html">Publications</a></li>
+      <li><a href="../gallery.html" class="active">Gallery</a></li>
+    </ul>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="page">
+    <div class="container">
+
+      <div class="post-hero">
+        <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../gallery.html">Gallery</a> / UBICOMP VR</div>
+        <div class="post-tag">Research · 2025</div>
+        <h1>🧠 UBICOMP EEG-VR Experiments</h1>
+        <p>Research assistant work at the UBICOMP lab, University of Oulu — collecting and preprocessing multimodal biosignals (EEG, ECG, EGG) from participants in immersive VR environments under Dr. Matti Pouke.</p>
+      </div>
+
+      <div class="media-section">
+        <div class="media-section-title">Photos</div>
+        <div class="photo-grid">
+          <div class="photo-item">
+            <div class="photo-placeholder"><span>📸</span>Add photo</div>
+            <div class="photo-caption">VR Setup</div>
+          </div>
+          <div class="photo-item">
+            <div class="photo-placeholder"><span>📸</span>Add photo</div>
+            <div class="photo-caption">EEG Equipment</div>
+          </div>
+          <div class="photo-item">
+            <div class="photo-placeholder"><span>📸</span>Add photo</div>
+            <div class="photo-caption">Experiment Session</div>
+          </div>
+          <div class="photo-item">
+            <div class="photo-placeholder"><span>📸</span>Add photo</div>
+            <div class="photo-caption">UBICOMP Lab</div>
+          </div>
+          <div class="photo-item">
+            <div class="photo-placeholder"><span>📸</span>Add photo</div>
+            <div class="photo-caption">Data Acquisition</div>
+          </div>
+          <div class="photo-item">
+            <div class="photo-placeholder"><span>📸</span>Add photo</div>
+            <div class="photo-caption">Signal Monitoring</div>
+          </div>
+        </div>
+      </div>
+
+      <a href="../gallery.html" class="btn btn-outline" style="margin-bottom:3rem;display:inline-block;">← Back to Gallery</a>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>Built by Ata Jodeiri Seyedian · Oulu, Finland · <a href="mailto:Ata.Seyedian@oulu.fi">Ata.Seyedian@oulu.fi</a></p>
+      </div>
+    </footer>
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+</html>
