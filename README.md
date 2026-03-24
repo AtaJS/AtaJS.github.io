@@ -2,5 +2,5 @@
 
 
 ### This site is live at:
-**https://AtaJS.github.io** (takes ~1 minute after push)
+**https://AtaJS.github.io** 
 
