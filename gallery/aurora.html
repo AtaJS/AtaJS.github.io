@@ -24,15 +24,16 @@
     .photo-placeholder { width:100%; aspect-ratio:4/3; display:flex; flex-direction:column; align-items:center; justify-content:center; background:linear-gradient(135deg,rgba(124,111,255,0.08),rgba(0,200,255,0.05)); color:var(--text-dim); font-size:0.8rem; gap:0.5rem; }
     .photo-placeholder span { font-size:1.8rem; }
     .photo-caption { padding:0.75rem 1rem; font-size:0.8rem; color:var(--text-muted); }
-    .video-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; }
     .video-card { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; transition:var(--transition); }
     .video-card:hover { border-color:var(--accent-blue); transform:translateY(-2px); }
-    .video-card iframe { width:100%; aspect-ratio:16/9; display:block; border:none; }
-    .video-placeholder { width:100%; aspect-ratio:16/9; display:flex; flex-direction:column; align-items:center; justify-content:center; background:linear-gradient(135deg,rgba(124,111,255,0.08),rgba(0,200,255,0.05)); color:var(--text-dim); font-size:0.85rem; gap:0.5rem; }
-    .video-placeholder span { font-size:2rem; }
+    .video-card iframe { width:100%; display:block; border:none; }
+    .video-card-landscape iframe { aspect-ratio:16/9; }
+    .video-card-portrait iframe { aspect-ratio:9/16; }
     .video-caption { padding:1rem 1.25rem; font-size:0.85rem; font-weight:600; color:var(--text); border-top:1px solid var(--border); }
     .video-caption small { display:block; font-weight:400; color:var(--text-muted); margin-top:0.2rem; }
-    @media(max-width:768px) { .photo-grid{grid-template-columns:repeat(2,1fr);} .video-grid{grid-template-columns:1fr;} }
+    .video-row-landscape { margin-bottom:1.25rem; }
+    .video-row-shorts { display:grid; grid-template-columns:repeat(2,1fr); gap:1.25rem; }
+    @media(max-width:768px) { .photo-grid{grid-template-columns:repeat(2,1fr);} .video-row-shorts{grid-template-columns:1fr;} }
   </style>
 </head>
 <body>
@@ -63,14 +64,20 @@
       <!-- VIDEOS -->
       <div class="media-section">
         <div class="media-section-title">Videos</div>
-        <div class="video-grid">
-          <div class="video-card">
-            <div class="video-placeholder"><span>🎬</span>Add event/pitch video</div>
-            <div class="video-caption">Event Highlights<small>AURO.RA Accelerathon · OuluES · 2026</small></div>
+        <div class="video-row-landscape">
+          <div class="video-card video-card-landscape">
+            <iframe src="https://www.youtube.com/embed/qWjO_0RpIvU" title="Final Pitching Demo" allowfullscreen></iframe>
+            <div class="video-caption">Final Pitching of Our Demo<small>AURO.RA Accelerathon · OuluES · March 2026</small></div>
           </div>
-          <div class="video-card">
-            <div class="video-placeholder"><span>🎬</span>Add demo video</div>
-            <div class="video-caption">Final Pitch / Demo<small>AURO.RA · 2026</small></div>
+        </div>
+        <div class="video-row-shorts">
+          <div class="video-card video-card-portrait">
+            <iframe src="https://www.youtube.com/embed/-aLHxgO-JOs" title="Judges Praised Us" allowfullscreen></iframe>
+            <div class="video-caption">Judges Praised Us<small>AURO.RA · March 2026</small></div>
+          </div>
+          <div class="video-card video-card-portrait">
+            <iframe src="https://www.youtube.com/embed/HUHTmd8aC1g" title="Announced as Winner" allowfullscreen></iframe>
+            <div class="video-caption">The Moment We Were Announced as Winners<small>AURO.RA · March 2026</small></div>
           </div>
         </div>
       </div>
@@ -80,28 +87,16 @@
         <div class="media-section-title">Photos</div>
         <div class="photo-grid">
           <div class="photo-item">
-            <div class="photo-placeholder"><span>📸</span>Add photo</div>
-            <div class="photo-caption">Award Ceremony</div>
+            <img src="../assets/gallery_pics/aurora/aurora_0.jpg" alt="AURO.RA Accelerathon" />
           </div>
           <div class="photo-item">
-            <div class="photo-placeholder"><span>📸</span>Add photo</div>
-            <div class="photo-caption">Team Photo</div>
+            <img src="../assets/gallery_pics/aurora/aurora_1.HEIC" alt="AURO.RA Accelerathon" />
           </div>
           <div class="photo-item">
-            <div class="photo-placeholder"><span>📸</span>Add photo</div>
-            <div class="photo-caption">Hackathon Day</div>
+            <img src="../assets/gallery_pics/aurora/aurora_2.HEIC" alt="AURO.RA Accelerathon" />
           </div>
           <div class="photo-item">
-            <div class="photo-placeholder"><span>📸</span>Add photo</div>
-            <div class="photo-caption">Pitching Session</div>
-          </div>
-          <div class="photo-item">
-            <div class="photo-placeholder"><span>📸</span>Add photo</div>
-            <div class="photo-caption">Workshop</div>
-          </div>
-          <div class="photo-item">
-            <div class="photo-placeholder"><span>📸</span>Add photo</div>
-            <div class="photo-caption">Event Venue</div>
+            <img src="../assets/gallery_pics/aurora/aurora_3.jpg" alt="AURO.RA Accelerathon" />
           </div>
         </div>
       </div>
