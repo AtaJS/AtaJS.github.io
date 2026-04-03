@@ -21,6 +21,7 @@
     .photo-item { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); overflow:hidden; transition:var(--transition); }
     .photo-item:hover { border-color:var(--accent-purple); transform:translateY(-2px); }
     .photo-item img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; cursor:zoom-in; }
+    .photo-item img.cert-img { object-fit:contain; background:#f8f8f8; padding:0.5rem; }
     .photo-placeholder { width:100%; aspect-ratio:4/3; display:flex; flex-direction:column; align-items:center; justify-content:center; background:linear-gradient(135deg,rgba(124,111,255,0.08),rgba(0,200,255,0.05)); color:var(--text-dim); font-size:0.8rem; gap:0.5rem; }
     .photo-placeholder span { font-size:1.8rem; }
     .photo-caption { padding:0.75rem 1rem; font-size:0.8rem; color:var(--text-muted); }
@@ -89,6 +90,22 @@
             <img src="../assets/gallery_pics/certificates/a%20group%20photo%20of%20me%20and%20my%20tutees.jpg" alt="Group photo with tutees" />
             <div class="photo-caption">With my tutees · 2025–2026</div>
           </div>
+          <div class="photo-item">
+            <img class="cert-img" src="../assets/gallery_pics/certificates/AtaJS_Cerrtification_FPGA.png" alt="FPGA Certification" />
+            <div class="photo-caption">FPGA Certification</div>
+          </div>
+          <div class="photo-item">
+            <img class="cert-img" src="../assets/gallery_pics/certificates/AtaJS_Certification_ARM.png" alt="ARM Certification" />
+            <div class="photo-caption">ARM Certification</div>
+          </div>
+          <div class="photo-item">
+            <img class="cert-img" src="../assets/gallery_pics/certificates/Prompt-Engineering-Certification_Master%20-AI__%28by%20Udemy%29.jpg" alt="Prompt Engineering Certification" />
+            <div class="photo-caption">Prompt Engineering Certification · Udemy</div>
+          </div>
+          <div class="photo-item">
+            <img class="cert-img" src="../assets/gallery_pics/certificates/ABC-of-data-protection.png" alt="ABC of Data Protection Certificate" />
+            <div class="photo-caption">ABC of Data Protection · 2025</div>
+          </div>
         </div>
       </div>
 
@@ -117,6 +134,30 @@
             <div class="doc-info">
               <strong>ABC of Data Protection for Public Administration Personnel</strong>
               <small>Research Ethics & Data Protection Training · 2025</small>
+            </div>
+            <div class="doc-arrow">↗</div>
+          </a>
+          <a class="doc-card" href="../assets/gallery_pics/certificates/AtaJS_Cerrtification_FPGA.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon">🖥️</div>
+            <div class="doc-info">
+              <strong>FPGA Certification</strong>
+              <small>Field-Programmable Gate Array</small>
+            </div>
+            <div class="doc-arrow">↗</div>
+          </a>
+          <a class="doc-card" href="../assets/gallery_pics/certificates/AtaJS_Certification_ARM.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon">⚙️</div>
+            <div class="doc-info">
+              <strong>ARM Certification</strong>
+              <small>ARM Architecture & Programming</small>
+            </div>
+            <div class="doc-arrow">↗</div>
+          </a>
+          <a class="doc-card" href="../assets/gallery_pics/certificates/Prompt-Engineering-Certification_Master%20-AI__%28by%20Udemy%29.pdf" target="_blank" rel="noopener">
+            <div class="doc-icon">🤖</div>
+            <div class="doc-info">
+              <strong>Prompt Engineering Certification — Master AI</strong>
+              <small>Udemy</small>
             </div>
             <div class="doc-arrow">↗</div>
           </a>
