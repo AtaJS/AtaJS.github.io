@@ -87,6 +87,16 @@
 
     @media (max-width: 900px) { .posts-grid { grid-template-columns: repeat(2,1fr); } }
     @media (max-width: 540px) { .posts-grid { grid-template-columns: 1fr; } }
+
+    #lightbox { display:none; position:fixed; inset:0; z-index:9999; align-items:center; justify-content:center; }
+    #lightbox.active { display:flex; }
+    #lb-backdrop { position:absolute; inset:0; background:rgba(5,5,12,0.92); backdrop-filter:blur(8px); }
+    #lb-img { position:relative; z-index:1; max-width:82vw; max-height:82vh; object-fit:contain; border-radius:10px; box-shadow:0 24px 80px rgba(0,0,0,0.7); }
+    #lb-close { position:absolute; top:1.5rem; right:1.75rem; z-index:2; background:rgba(255,255,255,0.08); border:1px solid rgba(255,255,255,0.15); color:#fff; font-size:1.2rem; width:2.5rem; height:2.5rem; border-radius:50%; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:background 0.2s; }
+    #lb-close:hover { background:rgba(255,255,255,0.18); }
+    #lb-caption { position:absolute; bottom:1.5rem; left:50%; transform:translateX(-50%); z-index:2; font-size:0.85rem; color:rgba(255,255,255,0.7); text-align:center; white-space:nowrap; }
+    #lb-caption a { color:var(--accent-blue); text-decoration:none; }
+    #lb-caption a:hover { text-decoration:underline; }
   </style>
 </head>
 <body>
@@ -134,12 +144,17 @@
           </div>
         </a>
 
-        <div class="post-card" style="cursor:default;">
-          <img src="assets/certificates/a%20group%20photo%20of%20me%20and%20my%20tutees.jpg" class="post-cover" alt="With my tutees" />
+        <div class="post-card tutees-card">
+          <img id="tutees-photo" src="assets/certificates/a%20group%20photo%20of%20me%20and%20my%20tutees.jpg" class="post-cover" alt="With my tutees" style="cursor:zoom-in;" />
           <div class="post-body">
             <div class="post-tag">Tutorship · 2025–2026</div>
             <div class="post-title">With My Tutees</div>
-            <div class="post-meta">International MSc Student Tutoring Program · University of Oulu</div>
+            <div class="post-meta">
+              International MSc Student Tutoring Program · University of Oulu<br>
+              <a href="gallery/certificates.html" style="color:var(--accent-blue);text-decoration:none;font-size:0.78rem;">View certificates ↗</a>
+              &nbsp;·&nbsp;
+              <a href="https://openbadgefactory.com/obv3/credentials/0833c599fcf468d30b135f563d0a8dc2a329e030" target="_blank" rel="noopener" style="color:var(--accent-blue);text-decoration:none;font-size:0.78rem;">Tutor badge ↗</a>
+            </div>
           </div>
         </div>
 
@@ -154,5 +169,41 @@
   </div>
 
   <script src="js/main.js"></script>
+  <script>
+    (function() {
+      var photo = document.getElementById('tutees-photo');
+      if (!photo) return;
+
+      var overlay = document.createElement('div');
+      overlay.id = 'lightbox';
+      overlay.innerHTML =
+        '<div id="lb-backdrop"></div>' +
+        '<button id="lb-close">\u2715</button>' +
+        '<img id="lb-img" src="" alt="" />' +
+        '<div id="lb-caption">International MSc Student Tutoring Program &nbsp;·&nbsp; ' +
+        '<a href="gallery/certificates.html">View certificates ↗</a>' +
+        ' &nbsp;·&nbsp; ' +
+        '<a href="https://openbadgefactory.com/obv3/credentials/0833c599fcf468d30b135f563d0a8dc2a329e030" target="_blank" rel="noopener">Tutor badge ↗</a>' +
+        '</div>';
+      document.body.appendChild(overlay);
+
+      function open() {
+        document.getElementById('lb-img').src = photo.src;
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      photo.addEventListener('click', open);
+      document.getElementById('lb-close').addEventListener('click', close);
+      document.getElementById('lb-backdrop').addEventListener('click', close);
+      document.addEventListener('keydown', function(e) {
+        if (overlay.classList.contains('active') && e.key === 'Escape') close();
+      });
+    })();
+  </script>
 </body>
 </html>
