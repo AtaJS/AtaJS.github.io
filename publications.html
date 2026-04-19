@@ -191,18 +191,19 @@
       <div class="section-label" style="margin-bottom:1.5rem;">Papers</div>
 
       <div class="paper-card">
-        <div class="paper-status status-in-prep">In Preparation</div>
-        <div class="paper-title">Geometry-Aware Attention for Remote Photoplethysmography Under Head Rotation</div>
-        <div class="paper-authors">Hui Wei, <strong>Ata Jodeiri Seyedian</strong>, Guoying Zhao</div>
-        <div class="paper-venue">28th ACM International Conference on Multimodal Interaction (ICMI 2026) — Expected October 2026</div>
+        <div class="paper-status status-in-prep">Under Review</div>
+        <div class="paper-title">LandmarkPhys: Landmark-Guided Attention for Cross-Domain Remote Photoplethysmography</div>
+        <div class="paper-authors"><strong>Ata Jodeiri Seyedian</strong>, Guoying Zhao</div>
+        <div class="paper-venue">IEEE International Joint Conference on Biometrics (IJCB 2026) — Under blind review</div>
         <div class="paper-abstract">
-          Remote photoplethysmography (rPPG) methods using deep learning have achieved strong performance under controlled conditions, but accuracy degrades significantly when subjects rotate their heads, as facial surface orientation toward the camera changes. This work proposes a geometry-aware attention mechanism that integrates 3D facial surface orientation derived from MediaPipe landmarks into the FactorizePhys attention module. By modulating spatial attention weights based on surface geometry, the method improves heart rate estimation robustness under head rotation while maintaining computational efficiency. Experiments on MMPD, VIPL-HR, PURE, and UBFC-rPPG datasets demonstrate improved performance under rotation conditions compared to geometry-blind baselines.
+          Remote photoplethysmography (rPPG) recovers blood volume pulse signals from facial video without contact, but state-of-the-art deep models that achieve sub-bpm intra-dataset error degrade by an order of magnitude when transferred across datasets. We propose LandmarkPhys, a lightweight rPPG model that complements appearance-based attention with an explicit, calibration-free geometric prior derived from facial landmarks. Our Landmark-Guided Attention Module (LandmarkAttn) encodes landmark trajectories, generates a learnable Gaussian skin-probability map, and fuses it into backbone voxel embeddings under a pose-conditioned gate that adapts to head orientation — adding only 5.8K parameters to a 52K FactorizePhys backbone. Across four public benchmarks, LandmarkPhys delivers the largest cross-dataset gains under domain shift: a 78% MAE reduction on the challenging MMPD→UBFC transfer (0.67 vs. 3.10 bpm) over the FactorizePhys baseline.
         </div>
         <div class="tags">
           <span class="tag tag-blue">rPPG</span>
           <span class="tag tag-purple">Heart Rate Estimation</span>
           <span class="tag tag-green">Deep Learning</span>
-          <span class="tag tag-blue">Computer Vision</span>
+          <span class="tag tag-blue">Facial Landmarks</span>
+          <span class="tag tag-purple">Domain Generalization</span>
         </div>
       </div>
 
