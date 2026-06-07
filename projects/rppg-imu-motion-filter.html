@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>rPPG-IMU Motion Filter — Ata Jodeiri Seyedian</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    .project-detail { padding: 4rem 0; }
+    .breadcrumb { font-size:0.8rem; color:var(--text-dim); margin-bottom:2rem; }
+    .breadcrumb a { color:var(--accent-blue); text-decoration:none; }
+    .breadcrumb a:hover { text-decoration:underline; }
+    .project-header { margin-bottom: 3rem; }
+    .featured-badge {
+      display: inline-block; font-size:0.7rem; font-weight:700;
+      letter-spacing:0.1em; text-transform:uppercase;
+      color:var(--accent-green); background:rgba(0,229,160,0.1);
+      border:1px solid rgba(0,229,160,0.2); padding:0.2rem 0.75rem;
+      border-radius:999px; margin-bottom:1rem;
+    }
+    .project-header h1 { font-size:2.4rem; font-weight:900; line-height:1.2; margin-bottom:1rem; }
+    .project-meta { display:flex; gap:1.5rem; flex-wrap:wrap; color:var(--text-dim); font-size:0.85rem; margin-bottom:2rem; }
+    .project-meta span { color:var(--accent-blue); font-weight:600; }
+    .project-body { max-width:780px; }
+    .project-body p { color:var(--text-muted); font-size:1rem; line-height:1.9; margin-bottom:1.5rem; }
+    .project-body h2 { font-size:1.3rem; font-weight:700; margin:2rem 0 0.75rem; }
+    .project-body ul { color:var(--text-muted); font-size:0.95rem; line-height:1.9; margin:0 0 1.5rem 1.25rem; }
+    .tech-stack { background:var(--bg-card); border:1px solid var(--border); border-radius:var(--radius); padding:1.25rem 1.5rem; margin:2rem 0; font-size:0.9rem; color:var(--text-muted); }
+    .tech-stack strong { color:var(--accent-purple); }
+    .results-table { width:100%; border-collapse:collapse; margin:1rem 0 2rem; font-size:0.875rem; }
+    .results-table th, .results-table td { text-align:left; padding:0.6rem 1rem; border-bottom:1px solid var(--border); color:var(--text-muted); }
+    .results-table th { color:var(--accent-blue); font-weight:600; font-size:0.75rem; letter-spacing:0.05em; text-transform:uppercase; }
+    .results-table td:first-child, .results-table th:first-child { color:var(--text); }
+    .tags { display:flex; gap:0.5rem; flex-wrap:wrap; margin-bottom:1.5rem; }
+    .project-links { display:flex; gap:1rem; flex-wrap:wrap; margin-top:2.5rem; }
+  </style>
+</head>
+<body>
+  <div class="grid-bg"></div>
+  <nav>
+    <a href="../index.html" class="nav-logo">Ata JS</a>
+    <ul class="nav-links">
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="../projects.html" class="active">Projects</a></li>
+      <li><a href="../experience.html">Experience</a></li>
+      <li><a href="../publications.html">Publications</a></li>
+      <li><a href="../gallery/certificates.html">Certificates</a></li>
+      <li><a href="../gallery.html">Gallery</a></li>
+    </ul>
+    <div class="nav-toggle"><span></span><span></span><span></span></div>
+  </nav>
+
+  <div class="page">
+    <div class="container">
+      <div class="project-detail">
+        <div class="breadcrumb"><a href="../index.html">Home</a> / <a href="../projects.html">Projects</a> / rPPG-IMU Motion Filter</div>
+
+        <div class="project-header">
+          <span class="featured-badge">Latest · 2026</span>
+          <h1>Motion-Robust Heart Rate Estimation via rPPG–IMU Sensor Fusion</h1>
+          <div class="project-meta">
+            <div>Context: <span>BME Course Project · University of Oulu</span></div>
+            <div>Domain: <span>rPPG · IMU · Signal Processing</span></div>
+          </div>
+          <div class="tags">
+            <span class="tag tag-blue">rPPG</span>
+            <span class="tag tag-purple">IMU Sensor Fusion</span>
+            <span class="tag tag-green">Heart Rate Estimation</span>
+            <span class="tag tag-blue">Signal Processing</span>
+            <span class="tag tag-purple">Android</span>
+          </div>
+        </div>
+
+        <div class="project-body">
+          <p>
+            Smartphone-based remote photoplethysmography (rPPG) can estimate heart rate from facial video without any contact, but deliberate hand motion while holding the phone introduces severe artifacts that corrupt the signal. This project investigates whether co-located accelerometer and gyroscope data — already available on any smartphone — can be used to detect and filter these motion-corrupted windows, recovering estimation accuracy when the subject moves.
+          </p>
+
+          <h2>Sub-Millisecond Sensor Synchronization</h2>
+          <p>
+            Fusing camera-derived rPPG with IMU streams requires the two data sources to be precisely time-aligned. To achieve this without specialized hardware, the system emits acoustic chirp pulses from the laptop speakers, captured by the phone's microphone, to align the Android device's hardware timestamps with the laptop's performance counter — reaching synchronization accuracy with R² > 0.9999997. A validation experiment confirmed the chirp pulses introduce negligible IMU artifact (0.18 m/s² versus 1.31 m/s² for typical hand motion).
+          </p>
+
+          <h2>rPPG Extraction & Motion Filtering</h2>
+          <p>
+            Facial regions are tracked with MediaPipe FaceLandmarker, and blood volume pulse signals are extracted using three established rPPG algorithms from the pyVHR library — CHROM, POS, and OMIT — over 6-second sliding windows with 0.65–4.0 Hz bandpass filtering. To counter motion artifacts, three IMU-driven strategies were implemented and compared: Normalized LMS adaptive filtering, motion-gated window rejection, and IMU-weighted signal fusion. Ground-truth heart rate was collected in parallel via a Beurer PO-80 pulse oximeter over USB HID.
+          </p>
+
+          <h2>Results</h2>
+          <p>
+            Across 8 subjects using the CHROM method, motion roughly tripled the estimation error relative to a stationary baseline. Gating out IMU-flagged corrupted windows recovered a meaningful share of that lost accuracy:
+          </p>
+          <table class="results-table">
+            <tr><th>Condition</th><th>Mean Absolute Error</th></tr>
+            <tr><td>Still (baseline)</td><td>5.6 ± 2.7 bpm</td></tr>
+            <tr><td>Motion (no filtering)</td><td>18.6 ± 9.4 bpm</td></tr>
+            <tr><td>Motion + IMU gating filter</td><td>16.8 ± 8.1 bpm</td></tr>
+          </table>
+
+          <div class="tech-stack">
+            <strong>Stack:</strong> Python · MediaPipe FaceLandmarker · pyVHR (CHROM / POS / OMIT) · Android SDK · Beurer PO-80 Pulse Oximeter (USB HID)
+          </div>
+
+          <div class="project-links">
+            <a href="https://github.com/AtaJS/-rppg-imu-motion-filter" target="_blank" class="btn btn-primary">GitHub →</a>
+            <a href="../projects.html" class="btn btn-outline">← Back to Projects</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>Built by Ata Jodeiri Seyedian · Oulu, Finland</p>
+      </div>
+    </footer>
+  </div>
+  <script src="../js/main.js"></script>
+</body>
+</html>
