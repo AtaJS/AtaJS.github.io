@@ -191,18 +191,18 @@
       <div class="section-label" style="margin-bottom:1.5rem;">Papers</div>
 
       <div class="paper-card">
-        <div class="paper-status status-in-prep">Under Review</div>
-        <div class="paper-title">LandmarkPhys: Landmark-Guided Attention for Cross-Domain Remote Photoplethysmography</div>
+        <div class="paper-status status-submitted">Submitted — Awaiting Decision</div>
+        <div class="paper-title">CanonicalPhys: Pose-Robust Remote Photoplethysmography via Canonical-Space Priors</div>
         <div class="paper-authors"><strong>Ata Jodeiri Seyedian</strong>, Guoying Zhao</div>
-        <div class="paper-venue">IEEE International Joint Conference on Biometrics (IJCB 2026) — Under blind review</div>
+        <div class="paper-venue">IEEE International Joint Conference on Biometrics (IJCB 2026) — Submitted, under review</div>
         <div class="paper-abstract">
-          Remote photoplethysmography (rPPG) recovers blood volume pulse signals from facial video without contact, but state-of-the-art deep models that achieve sub-bpm intra-dataset error degrade by an order of magnitude when transferred across datasets. We propose LandmarkPhys, a lightweight rPPG model that complements appearance-based attention with an explicit, calibration-free geometric prior derived from facial landmarks. Our Landmark-Guided Attention Module (LandmarkAttn) encodes landmark trajectories, generates a learnable Gaussian skin-probability map, and fuses it into backbone voxel embeddings under a pose-conditioned gate that adapts to head orientation — adding only 5.8K parameters to a 52K FactorizePhys backbone. Across four public benchmarks, LandmarkPhys delivers the largest cross-dataset gains under domain shift: a 78% MAE reduction on the challenging MMPD→UBFC transfer (0.67 vs. 3.10 bpm) over the FactorizePhys baseline.
+          Deep rPPG models achieve sub-bpm MAE on frontal, stationary faces yet degrade sharply under head pose changes — on MMPD, the state-of-the-art FactorizePhys backbone's MAE grows 1.60× from frontal to large-yaw frames. We argue that pose is a coordinate-structural nuisance rather than a data-augmentation problem: an image-coordinate pixel maps to different anatomy at different poses, blocking three priors natural to rPPG (the dichromatic reflection model, pulse-phase invariance across skin regions, and the POS/CHROM chromaticity projection). We introduce CanonicalPhys, which prepends a differentiable, zero-parameter 4-point homography that places four facial anchors at fixed canonical positions. In this canonical frame, three zero-parameter components become tractable — a per-pixel Lambertian weight, a cross-ROI temporal consistency loss, and knowledge distillation from windowed POS — at identical parameter count to the backbone. CanonicalPhys reduces MMPD's frontal-to-large-yaw degradation from 1.60× to 1.33× and flattens the mild-yaw bin from 1.32× to 1.07×, with cross-dataset MAE improvements of 19%–45% on pose-rich targets.
         </div>
         <div class="tags">
           <span class="tag tag-blue">rPPG</span>
-          <span class="tag tag-purple">Heart Rate Estimation</span>
+          <span class="tag tag-purple">Pose Robustness</span>
           <span class="tag tag-green">Deep Learning</span>
-          <span class="tag tag-blue">Facial Landmarks</span>
+          <span class="tag tag-blue">Canonical Coordinates</span>
           <span class="tag tag-purple">Domain Generalization</span>
         </div>
       </div>
